@@ -1,0 +1,16 @@
+{
+  "products": {
+    "column": {
+      "id": true,
+      "name": true,
+      "price": true,
+      "description": true
+    },
+    "index": {
+      "PRODUCTS_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  }
+}

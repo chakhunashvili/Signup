@@ -1,0 +1,22 @@
+<?php
+ /** @var $block Devall\Mastering\Block\CompanyBlock */
+ $companyObject = $block->getCompany(2);
+?>
+<div>
+    <h1>Shopping List</h1>
+    <?= $companyObject->getName() ?><br>
+    <?php $companyObject->setName('jumberi'); ?>
+    <?php $block->saveCompany($companyObject) ?>
+    <?= $companyObject->getName() ?><br>
+    <?= $companyObject->getData('customer_id') ?><br>
+    <?= $companyObject->getData('id') ?><br>
+    <p>paragraph</p>
+    <ul>
+        <li>
+
+        </li>
+        <li>
+
+        </li>
+    </ul>
+</div>

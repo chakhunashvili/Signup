@@ -1,0 +1,33 @@
+<?php
+/** @var $block Devall\Signup\Block\SignupBlock */
+
+$productsObject = $block->getProductById(2);
+$showTable = $block->isEnabled();
+$allProducts = $block->getAllProducts();
+?>
+
+<?php if ($showTable): ?>
+    <div class="container">
+        <form action="signup/submit">
+            <div class="row">
+                <h4>Account</h4>
+                <div class="input-group input-group-icon"><input name="name" type="text" placeholder="Full Name"/>
+                    <div class="input-icon"><i class="fa fa-user"></i></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-half">
+                    <h4>Date of Birth</h4>
+                    <div class="input-group">
+                        <div class="col-third"><input name="date" type="date" placeholder="Date"/></div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">
+                Signup
+            </button>
+        </form>
+    </div>
+<?php else: ?>
+    <div>Form not enabled</div>
+<?php endif; ?>

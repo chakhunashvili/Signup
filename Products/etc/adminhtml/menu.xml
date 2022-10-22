@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Devall_Products::products" title="Products" module="Devall_Products" sortOrder="2" resource="Devall_Products::products"/>
+        <add id="Devall_Products::link" title="Products link" module="Devall_Products" sortOrder="10" action="devall" resource="Devall_Products::link" parent="Devall_Products::products"/>
+        <add id="Devall_Products::listing" sortOrder="10" title="Products Grid" module="Devall_Products"
+             parent="Devall_Products::link" resource="Devall_Products::listing" translate="title"
+             action="devall/products/grid"/>
+    </menu>
+</config>
+

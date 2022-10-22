@@ -1,0 +1,18 @@
+{
+  "signup": {
+    "column": {
+      "id": true,
+      "name": true,
+      "date": true
+    },
+    "index": {
+      "SIGNUP_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  },
+  "signup_index_index": {
+    "column": {}
+  }
+}

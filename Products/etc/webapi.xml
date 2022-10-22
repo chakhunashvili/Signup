@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/devall" method="GET">
+        <service class="Devall\Products\Api\ProductsRepositoryInterface" method="getList"></service>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

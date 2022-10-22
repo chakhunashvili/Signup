@@ -1,0 +1,8 @@
+{
+  "company": {
+    "column": {
+      "id": true,
+      "company_name": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<?php
+/** @var $block Devall\Products\Block\ProductsBlock */
+
+$productsObject = $block->getProductById(2);
+$showTable = $block->isEnabled();
+$allProducts = $block->getAllProducts();
+?>
+
+<?php if ($showTable): ?>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>description</th>
+        </tr>
+        <?php foreach ($allProducts as $product): ?>
+            <tr>
+                <td><?= $product->getId(); ?></td>
+                <td><?= $product->getName(); ?> </td>
+                <td><?= $product->getPrice(); ?> </td>
+                <td><?= $product->getDescription(); ?> </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php endif; ?>

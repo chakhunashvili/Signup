@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Devall\Products\Api\Data\ProductsInterface" type="Devall\Products\Model\Products"/>
+    <preference for="Devall\Products\Api\ProductsRepositoryInterface" type="Devall\Products\Model\ProductsRepository"/>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="devall_products_add_products" xsi:type="object">
+                    Devall\Products\Console\Command\AddProducts
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Devall\Products\Console\Command\AddProducts">
+        <arguments>
+            <argument name="name" xsi:type="string">devall:products:progress-bar</argument>
+        </arguments>
+    </type>
+    <virtualType name="ProductsDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="resourceModel" xsi:type="string">
+                Devall\Mastering\Model\ResourceModel\CompanyCollection\Collection
+            </argument>
+            <argument name="mainTable" xsi:type="string">products</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument xsi:type="array">
+                <item xsi:type="string" name="products_data_source">ProductsDataProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
